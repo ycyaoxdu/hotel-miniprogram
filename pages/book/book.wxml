@@ -1,0 +1,21 @@
+<!--pages/book/book.wxml-->
+<title>
+  房型一览
+</title>
+<!-- 标准间 -->
+<view>
+  <image src="/images/pics/standard.jpg"></image>
+  <text>
+    标准间
+  </text>
+</view>
+
+<!-- 大床房 -->
+<view>
+  <image src="/images/pics/double.jpg"></image>
+  <text>
+    大床房
+  </text>
+</view>
+
+<button bindtap="goToOrder" type="primary">预定房间</button>

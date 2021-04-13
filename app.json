@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/mine/myorder/myorder",
+    "pages/book/book",
+    "pages/book/createorder/createorder",
+    "pages/home/home",
+    "pages/mine/myinfo/myinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "XD Hotel",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home1.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "预订",
+        "iconPath": "images/icons/book.png",
+        "selectedIconPath": "images/icons/book1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人",
+        "iconPath": "images/icons/mine.png",
+        "selectedIconPath": "images/icons/mine1.png"
+      }
+    ],
+    "color": "#bfbfbf",
+    "selectedColor": "#fe3131",
+    "backgroundColor": "white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

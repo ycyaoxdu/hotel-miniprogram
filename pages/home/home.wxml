@@ -1,0 +1,74 @@
+<!--pages/home/home.wxml-->
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+<view class="hotel_introduce">
+  <view class="banner">
+    <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay
+      interval="3000">
+      <swiper-item>
+        <image src="/images/pics/banner1.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/pics/banner2.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/pics/banner3.jpg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="intro">
+    <view class="container">
+      <view class="pubTitle">
+        <view class="txt">
+          酒店简介
+        </view>
+
+        <navigator class="detail"> 详情 >> </navigator>
+      </view>
+
+      <view class="introMain">
+        <navigator class="box" wx:for="{{4}}">
+          <image class="pic" src="/images/pics/color1.png"></image>
+          <view class="ceng">
+            <view class="tit">酒店状态</view>
+            <view class="line"></view>
+            <view class="des">hotel status</view>
+          </view>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+
+
+  <map id="map" longitude="108.8354112176204" latitude="34.1282845900" scale="14" show-location
+    style="margin:40rpx auto;">
+  </map>
+
+  <view >
+    正常营业中、
+    可寄放行李、
+    提供停车服务、
+    免费无线网络
+  </view>
+  <view>
+    开业时间 ：2020年6月
+  </view>
+  <view>
+    装修时间 ：2020年6月
+  </view>
+  <view>
+    酒店地址 ：陕西省西安市长安区xx路xxx号
+  </view>
+  <view>
+    订房热线：029-8888 8888
+  </view>
+</view>

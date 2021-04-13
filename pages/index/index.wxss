@@ -1,0 +1,14 @@
+.hdCon{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.hdCon navigator{
+  height: 50rpx;
+}
+
+.hdCon image{
+  height: 100%;
+}
