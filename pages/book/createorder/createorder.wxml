@@ -1,10 +1,25 @@
 <!--pages/book/createorder/createorder.wxml-->
-<text>pages/book/createorder/createorder.wxml</text>
+
+
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
 <!--  -->
+<text>you have selected {{type}} room</text>
 <input placeholder="输入入住人姓名：" bindinput="addName"></input>
 <input placeholder="输入入住人电话：" bindinput="addPhone"></input>
-<input placeholder="输入入住房型：" bindinput="addType"></input>
 <input placeholder="输入入住日期：" bindinput="addStart"></input>
 <input placeholder="输入离店日期：" bindinput="addEnd"></input>
 
 <button bindtap="addOrder" type="primary">提交订单</button>
+
+
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

@@ -1,13 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/home/home",
+    "pages/home/introduction/introduction",
+    "pages/home/status/status",
+    "pages/home/position/position",
+    "pages/home/telephone/telephone",
     "pages/mine/mine",
     "pages/mine/myorder/myorder",
+    "pages/mine/myinfo/myinfo",
     "pages/book/book",
     "pages/book/createorder/createorder",
-    "pages/home/home",
-    "pages/mine/myinfo/myinfo"
+    "pages/book/standard/standard",
+    "pages/book/double/double"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

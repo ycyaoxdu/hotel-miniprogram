@@ -1,0 +1,49 @@
+<!--pages/home/status/status.wxml-->
+
+
+<!--  header  -->
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+
+
+<view class="dyItem">
+  <view class="text">
+    正常营业中、
+    可寄放行李、
+    提供停车服务、
+    免费无线网络
+  </view>
+</view>
+
+<view class="dyItem">
+  <view class="title">
+    开业时间 ：
+  </view>
+  <view class="text">
+    2020年6月
+  </view>
+</view>
+<view class="dyItem">
+  <view class="title">
+    装修时间 ：
+  </view>
+  <view class="text">
+    2020年6月
+  </view>
+</view>
+
+
+
+
+  <!--  footer  -->
+  <view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

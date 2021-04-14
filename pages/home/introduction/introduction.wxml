@@ -1,0 +1,28 @@
+<!--pages/home/introduction/introduction.wxml-->
+
+
+<!--  header  -->
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+
+
+
+<view class="dyItem">
+  <view class="text">
+    这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍这是酒店介绍
+  </view>
+</view>
+
+
+  <!--  footer  -->
+  <view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

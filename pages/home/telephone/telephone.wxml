@@ -1,0 +1,27 @@
+<!--pages/home/telephone/telephone.wxml-->
+
+
+<!--  header  -->
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+
+
+<view class="dyItem">
+  <view class="text">
+    订房热线：029-8888 8888
+  </view>
+</view>
+
+
+  <!--  footer  -->
+  <view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

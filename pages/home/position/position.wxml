@@ -1,0 +1,32 @@
+<!--pages/home/position/position.wxml-->
+
+<!--  header  -->
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+
+<map id="map" longitude="108.8354112176204" latitude="34.1282845900" scale="14" show-location
+    style="margin:40rpx auto;">
+</map>
+
+<view class="dyItem">
+  <view class="title">
+    酒店地址:
+  </view>
+  <view class="text">
+    陕西省西安市长安区xx路xxx号
+  </view>
+</view>
+
+
+  <!--  footer  -->
+  <view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

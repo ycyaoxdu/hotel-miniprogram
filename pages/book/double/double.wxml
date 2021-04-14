@@ -1,5 +1,3 @@
-<!--index.wxml-->
-
 <view class="header">
   <view class="container hdCon">
     <navigator open-type="switchTab" url="/pages/home/home" class="logo">
@@ -8,6 +6,11 @@
 
   </view>
 </view>
+<!--  -->
+<text>please return homepage</text>
 
-<button bindtap="goToHome">go</button>
-<button bindtap="login">press to login</button>
+
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

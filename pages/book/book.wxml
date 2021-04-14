@@ -19,7 +19,7 @@
       </view>
 
       <view class="dyMain">
-        <navigator class="dyItem" >
+        <navigator class="dyItem" url="./standard/standard">
           <view class="pic">
             <image src="/images/pics/standard.jpg"></image>
           </view>
@@ -28,7 +28,9 @@
               豪华标准间
             </view>
             <view class="info">
-              information
+              informationinformationinformation
+              informationinformationinformation
+              informationinformationinformation
             </view>
 
           </view>
@@ -36,7 +38,7 @@
       </view>
 
       <view class="dyMain">
-        <navigator class="dyItem" >
+        <navigator class="dyItem" url="./double/double">
           <view class="pic">
             <image src="/images/pics/double.jpg"></image>
           </view>
@@ -45,7 +47,9 @@
               豪华大床房
             </view>
             <view class="info">
+              informationinformation
               information
+              informationinformation
             </view>
 
           </view>
@@ -56,10 +60,6 @@
 
     </view>
   </view>
-
-
-<button bindtap="goToOrder" type="primary">预定房间</button>
-
 
 
 

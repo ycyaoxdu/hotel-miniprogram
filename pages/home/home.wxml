@@ -27,6 +27,7 @@
     </swiper>
   </view>
 
+  <!----->
   <view class="intro">
     <view class="container">
       <view class="pubTitle">
@@ -38,7 +39,7 @@
       </view>
 
       <view class="introMain">
-        <navigator class="box">
+        <navigator class="box" url="./introduction/introduction">
           <image class="pic" src="/images/pics/color1.png"></image>
           <view class="ceng">
             <view class="tit">酒店介绍</view>
@@ -47,7 +48,7 @@
           </view>
         </navigator>
 
-        <navigator class="box">
+        <navigator class="box" url="./status/status">
           <image class="pic" src="/images/pics/color2.png"></image>
           <view class="ceng">
             <view class="tit">酒店状态</view>
@@ -56,7 +57,7 @@
           </view>
         </navigator>
 
-        <navigator class="box">
+        <navigator class="box" url="./position/position">
           <image class="pic" src="/images/pics/color3.png"></image>
           <view class="ceng">
             <view class="tit">酒店地址</view>
@@ -65,7 +66,7 @@
           </view>
         </navigator>
 
-        <navigator class="box">
+        <navigator class="box" url="./telephone/telephone">
           <image class="pic" src="/images/pics/color4.png"></image>
           <view class="ceng">
             <view class="tit">酒店热线</view>
@@ -120,34 +121,4 @@
 
 
 
-
-
-
-
-
-
-
-
-  <map id="map" longitude="108.8354112176204" latitude="34.1282845900" scale="14" show-location
-    style="margin:40rpx auto;">
-  </map>
-
-  <view>
-    正常营业中、
-    可寄放行李、
-    提供停车服务、
-    免费无线网络
-  </view>
-  <view>
-    开业时间 ：2020年6月
-  </view>
-  <view>
-    装修时间 ：2020年6月
-  </view>
-  <view>
-    酒店地址 ：陕西省西安市长安区xx路xxx号
-  </view>
-  <view>
-    订房热线：029-8888 8888
-  </view>
 </view>

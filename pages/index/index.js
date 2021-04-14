@@ -1,6 +1,7 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+const { IndexUrl } = require('../../config/api');
 const api = require('../../config/api');
 
 
@@ -18,15 +19,26 @@ Page({
       url: '/pages/home/home',
     })
   },
-
-
-
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  login(){
+    wx.login({
+      success(res){
+        if(res.code){
+          wx.request({
+            url: IndexUrl,
+            data:{
+              code:res.code,
+            }
+          })
+        }else{
+          console.log('login failed ! ' + res.errMsg)
+        }
+      },
+      fail(res){
+        console.log(res)
+      }
     })
   },
+
   onLoad() {
     
 /*     wx.showLoading({
@@ -43,17 +55,8 @@ Page({
       })
     }
 
-    this.getCase()
   },
 
-  getCase(){
-    wx.request({
-      url: api.IndexUrl,
-      success (res) {
-        console.log(res.data)
-      }
-    })
-  },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
