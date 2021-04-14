@@ -1,8 +1,8 @@
 // pages/mine/mine.js
 Page({
-  goToLogin : function () {
+  goToMyInfo : function () {
     wx.navigateTo({
-      url: '/pages/mine/login/login',
+      url: '/pages/mine/myinfo/myinfo',
     })
   },
   goToMyOrder : function () {

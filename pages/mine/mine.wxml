@@ -1,4 +1,24 @@
 <!--pages/mine/mine.wxml-->
-<button bindtap="goToLogin" type="primary">个人信息</button>
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+
+
+<button bindtap="goToMyInfo" type="primary">个人信息</button>
 <text>  </text>
 <button bindtap="goToMyOrder" type="primary">我的订单</button>
+
+
+
+
+
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

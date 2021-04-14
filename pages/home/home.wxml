@@ -1,4 +1,6 @@
 <!--pages/home/home.wxml-->
+
+<!--  header  -->
 <view class="header">
   <view class="container hdCon">
     <navigator open-type="switchTab" url="/pages/home/home" class="logo">
@@ -8,6 +10,7 @@
   </view>
 </view>
 
+<!--  intro  -->
 <view class="hotel_introduce">
   <view class="banner">
     <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay
@@ -35,12 +38,39 @@
       </view>
 
       <view class="introMain">
-        <navigator class="box" wx:for="{{4}}">
+        <navigator class="box">
           <image class="pic" src="/images/pics/color1.png"></image>
+          <view class="ceng">
+            <view class="tit">酒店介绍</view>
+            <view class="line"></view>
+            <view class="des">introduction</view>
+          </view>
+        </navigator>
+
+        <navigator class="box">
+          <image class="pic" src="/images/pics/color2.png"></image>
           <view class="ceng">
             <view class="tit">酒店状态</view>
             <view class="line"></view>
             <view class="des">hotel status</view>
+          </view>
+        </navigator>
+
+        <navigator class="box">
+          <image class="pic" src="/images/pics/color3.png"></image>
+          <view class="ceng">
+            <view class="tit">酒店地址</view>
+            <view class="line"></view>
+            <view class="des">position</view>
+          </view>
+        </navigator>
+
+        <navigator class="box">
+          <image class="pic" src="/images/pics/color4.png"></image>
+          <view class="ceng">
+            <view class="tit">酒店热线</view>
+            <view class="line"></view>
+            <view class="des">phone number</view>
           </view>
         </navigator>
       </view>
@@ -48,12 +78,61 @@
     </view>
   </view>
 
+  <!--    -->
+
+  <view class="dynamic">
+    <view class="container">
+      <view class="pubTitle">
+        <view class="txt">
+          最新公告
+        </view>
+        <navigator class="detail"> 更多 >> </navigator>
+      </view>
+
+      <view class="dyMain">
+        <navigator class="dyItem" wx:for="{{5}}">
+          <view class="pic">
+            <image src="/images/pics/color1.png"></image>
+          </view>
+          <view class="txt">
+            <view class="title">
+              title 
+            </view>
+            <view class="info">
+              information
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+
+
+    </view>
+  </view>
+
+
+  <!--  footer  -->
+  <view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
 
   <map id="map" longitude="108.8354112176204" latitude="34.1282845900" scale="14" show-location
     style="margin:40rpx auto;">
   </map>
 
-  <view >
+  <view>
     正常营业中、
     可寄放行李、
     提供停车服务、

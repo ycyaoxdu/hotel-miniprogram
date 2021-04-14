@@ -1,21 +1,70 @@
 <!--pages/book/book.wxml-->
-<title>
-  房型一览
-</title>
-<!-- 标准间 -->
-<view>
-  <image src="/images/pics/standard.jpg"></image>
-  <text>
-    标准间
-  </text>
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
 </view>
 
-<!-- 大床房 -->
-<view>
-  <image src="/images/pics/double.jpg"></image>
-  <text>
-    大床房
-  </text>
-</view>
+ <!--    -->
+
+ <view class="dynamic">
+    <view class="container">
+      <view class="pubTitle">
+        <view class="txt">
+          房型一览
+        </view>
+      </view>
+
+      <view class="dyMain">
+        <navigator class="dyItem" >
+          <view class="pic">
+            <image src="/images/pics/standard.jpg"></image>
+          </view>
+          <view class="txt">
+            <view class="title">
+              豪华标准间
+            </view>
+            <view class="info">
+              information
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+
+      <view class="dyMain">
+        <navigator class="dyItem" >
+          <view class="pic">
+            <image src="/images/pics/double.jpg"></image>
+          </view>
+          <view class="txt">
+            <view class="title">
+              豪华大床房
+            </view>
+            <view class="info">
+              information
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+
+
+
+    </view>
+  </view>
+
 
 <button bindtap="goToOrder" type="primary">预定房间</button>
+
+
+
+
+
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>
