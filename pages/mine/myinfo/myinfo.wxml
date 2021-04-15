@@ -1,2 +1,28 @@
 <!--pages/mine/myinfo/myinfo.wxml-->
-<text>pages/mine/myinfo/myinfo.wxml</text>
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+<!--  -->
+<text>您的常住人信息</text>
+<view class="shuru">
+  <view class="xiangmu">姓名:</view>
+  <input value="{{name}}" placeholder="在此处输入姓名" bindinput="setName"></input>
+</view>
+<!---->
+<view class="shuru">
+  <view class="xiangmu">电话:</view>
+  <input value="{{phone}}" placeholder="在此处输入入住人电话：" bindinput="setPhone"></input>
+</view>
+
+<button bindtap="setInfo" type="primary">提交信息</button>
+
+<!-- -->
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

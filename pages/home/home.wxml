@@ -91,7 +91,7 @@
       </view>
 
       <view class="dyMain">
-        <navigator class="dyItem" wx:for="{{5}}">
+        <navigator class="dyItem" >
           <view class="pic">
             <image src="/images/pics/color1.png"></image>
           </view>

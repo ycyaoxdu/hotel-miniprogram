@@ -1,9 +1,7 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-const { IndexUrl } = require('../../config/api');
 const api = require('../../config/api');
-
 
 Page({
   data: {
@@ -24,10 +22,18 @@ Page({
       success(res){
         if(res.code){
           wx.request({
-            url: IndexUrl,
+            url: api.IndexUrl,
             data:{
               code:res.code,
+            },
+            success (res) {
+              //console.log(res.data.openid);
+              app.globalData.openid = res.data.openid;
+              //console.log(app.globalData);
             }
+          })
+          wx.switchTab({
+            url: '/pages/home/home',
           })
         }else{
           console.log('login failed ! ' + res.errMsg)

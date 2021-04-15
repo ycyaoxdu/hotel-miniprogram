@@ -1,5 +1,7 @@
 // pages/book/createorder/createorder.js
-const api = require('../../../config/api')
+const api = require('../../../config/api');
+const app = getApp();
+const {formatTime} = require('../../../utils/util');
 
 let name = ""
 let phone = ""
@@ -33,14 +35,17 @@ Page({
       phone: event.detail.value,
     })
   },
-  addStart(event){
+
+  bindStart : function(e) {
+    console.log(e.detail.value);
     this.setData({
-      start: event.detail.value,
+      start : e.detail.value 
     })
   },
-  addEnd(event){
+  bindEnd : function(e) {
+    console.log(e.detail.value);
     this.setData({
-      end: event.detail.value,
+      end : e.detail.value 
     })
   },
 
@@ -48,6 +53,7 @@ Page({
     console.log(this.data);
     wx.request({
       url: api.OrderUrl,
+      
       success (res) {
         console.log(res)
       },
@@ -70,6 +76,39 @@ Page({
       })
       //console.log(data)
     })
+    
+    //
+    wx.request({
+      url: api.editUserInfoUrl ,
+      data : {
+        openid : app.globalData.openid, 
+      } ,
+      method:"POST", 
+      success:(res) => {
+        //console.log(res.data);
+        const data = res.data[0];
+        this.setData({
+          name : data.name,
+          phone: data.phonenumber
+        })
+      },
+      fail(){
+        console.log(res.errMsg);
+      }
+    })
+
+    //
+    var timestamp = Date.parse(new Date());
+    var date = new Date(timestamp);
+
+    timestamp = timestamp + 24*60*60*1000 
+    var tomorrow = new Date(timestamp);
+
+    this.setData({
+      start : formatTime(date),
+      end : formatTime(tomorrow)
+    })
+
   },
 
   /**
