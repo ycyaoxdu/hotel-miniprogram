@@ -1,0 +1,23 @@
+<!--pages/mine/myadvice/myadvice.wxml-->
+
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+
+<!--  -->
+<view class="advice">
+  <textarea value="{{advice}}" placeholder="在此输入您的意见或是建议：" bindinput="setAdvice"></textarea>
+</view>
+
+<button bindtap="addAdvice" type="primary">提交</button>
+
+<!-- -->
+<view class="footer">
+    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+    <view class="text">- 享你所想 -</view>
+  </view>

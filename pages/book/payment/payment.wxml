@@ -1,0 +1,8 @@
+<!--pages/book/payment/payment.wxml-->
+<text>pages/book/payment/payment.wxml</text>
+<view>
+  <button bindtap="afterPay">点击支付</button>
+  <text>
+    支付结果请在“个人信息”-“我的订单”查看
+  </text>
+</view>

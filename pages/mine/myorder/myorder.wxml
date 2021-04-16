@@ -8,10 +8,89 @@
 
   </view>
 </view>
-<!--  -->
+
+
+<!-- -->
+<view class="dynamic">
+  <view class="container">
+    <view class="pubTitle">
+      <view class="txt">
+        我的订单
+      </view>
+    </view>
+    <view class="dyMain" wx:for="{{listData}}">
+      <navigator class="dyItem" url="./editorder/editorder?name={{item.name}}&phone={{item.phone}}&type={{item.type}}&start={{item.start}}&end={{item.end}}&status={{status}}&id={{item._id}}&createTime={{item.createTime}}">
+
+        <view class="aa">
+          <view class="txt">
+            <view class="title">
+              姓名：
+            </view>
+            <view class="info">
+              {{item.name}}
+            </view>
+          </view>
+
+          <view class="txt">
+            <view class="title">
+              电话：
+            </view>
+            <view class="info">
+              {{item.phone}}
+            </view>
+          </view>
+        </view>
+
+        <view class="aa">
+          <view class="txt">
+            <view class="title">
+              入住起始：
+            </view>
+            <view class="info">
+              {{item.start}}
+            </view>
+          </view>
+
+          <view class="txt">
+            <view class="title">
+              预计离店：
+            </view>
+            <view class="info">
+              {{item.end}}
+            </view>
+          </view>
+        </view>
+
+        <view class="aa">
+          <view class="txt">
+            <view class="title">
+              房型：
+            </view>
+            <view class="info">
+              {{item.type}}
+            </view>
+          </view>
+
+          <view class="txt">
+            <view class="title">
+              订单状态：
+            </view>
+            <view class="info">
+              {{item.status}}
+            </view>
+          </view>
+        </view>
+
+
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
 
 <!-- -->
 <view class="footer">
-    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
-    <view class="text">- 享你所想 -</view>
-  </view>
+  <image class="pic" mode="widthFix" s rc="/images/icons/xdu.png"></image>
+  <view class="text">- 享你所想 -</view>
+</view>

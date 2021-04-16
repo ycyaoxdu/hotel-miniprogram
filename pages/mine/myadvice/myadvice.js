@@ -1,8 +1,11 @@
-// pages/mine/myorder/myorder.js
+/****
+ * 此页面完成添加并提交建议的业务逻辑
+ */
+
+
+
+// pages/mine/myadvice/myadvice.js
 const api = require('../../../config/api');
-const app = getApp();
-
-
 
 Page({
 
@@ -10,30 +13,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData:[]
-    },
-
-  
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    advice:"",
+  },
+  setAdvice(event){
+    this.setData({
+      advice:event.detail.value,
+    })
+  },
+  addAdvice(){
+    //console.log(this.data.advice)
     wx.request({
-      url: api.checkOrderUrl,
+      url: api.addAdviceUrl,
       data:{
-        openid : app.globalData.openid
+        advice:this.data.advice
       },
       method:"POST",
-      success : (res)=>{
+      success(res){
         console.log(res.data);
-        this.setData({
-          listData:res.data,
-        })
       },
       fail(res){
         console.log(res.errMsg);
       }
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
 
   /**

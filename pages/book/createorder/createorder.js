@@ -3,6 +3,7 @@ const api = require('../../../config/api');
 const app = getApp();
 const {formatTime} = require('../../../utils/util');
 
+let openid = ""
 let name = ""
 let phone = ""
 let type = ""
@@ -16,13 +17,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    openid:openid ,
     name:name,
     phone:phone,
     type:type,
     start:start,
     end:end,
-    createTime:Date.now(),
-    pay:false,
   },
 
   addName(event){
@@ -52,10 +52,23 @@ Page({
   addOrder(){
     console.log(this.data);
     wx.request({
-      url: api.OrderUrl,
-      
+      url: api.doAddOrderUrl,
+      data:{
+        openid:this.data.openid ,
+        name:this.data.name,
+        phone:this.data.phone,
+        type:this.data.type,
+        start:this.data.start,
+        end:this.data.end,
+        createTime:Date.now(),
+        status:"not pay",
+      },
+      method:"POST",
       success (res) {
         console.log(res)
+        wx.navigateTo({
+          url: '../payment/payment',
+        })
       },
       fail(){
         console.log('fail')
@@ -76,12 +89,16 @@ Page({
       })
       //console.log(data)
     })
-    
+
+    //
+    this.setData({
+      openid:app.globalData.openid,
+    })
     //
     wx.request({
       url: api.editUserInfoUrl ,
       data : {
-        openid : app.globalData.openid, 
+        openid:app.globalData.openid
       } ,
       method:"POST", 
       success:(res) => {

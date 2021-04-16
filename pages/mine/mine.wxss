@@ -12,6 +12,17 @@
   height: 100%;
 }
 
+/***/
+.pag{
+  padding: 100rpx 10rpx 100rpx
+}
+.pag .butt{
+  padding: 50rpx 10rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .footer{
   padding: 30rpx 0;
   background: #f2f2f2 ;

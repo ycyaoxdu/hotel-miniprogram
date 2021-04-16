@@ -1,8 +1,8 @@
-// pages/mine/myorder/myorder.js
+// pages/book/payment/payment.js
 const api = require('../../../config/api');
 const app = getApp();
 
-
+let money = ""
 
 Page({
 
@@ -10,30 +10,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData:[]
-    },
+    money:money
+  },
+  afterPay(){
+    //弹窗提示已支付，在***查看订单详情
+    wx.showModal({
+      title:'微信支付',
+      content:'这里模拟了微信支付操作（没有商家id无法微信收款）',
+      confirmText:'点击支付',
+      success(){
+        //支付已完成
+        wx.request({
+          url: api.editStatusUrl,
+          data : {
+            openid : app.globalData.openid,
+            status : "paid",
+          },
+          method : "POST",
+          success(res){
+            console.log(res);
+          },
+          fail(res){
+            console.log(errMsg);
+          }
+        })
 
-  
+        wx.navigateTo({
+          url: '/pages/mine/myorder/myorder',
+        })
+      }
+    })
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: api.checkOrderUrl,
-      data:{
-        openid : app.globalData.openid
-      },
-      method:"POST",
-      success : (res)=>{
-        console.log(res.data);
-        this.setData({
-          listData:res.data,
-        })
-      },
-      fail(res){
-        console.log(res.errMsg);
-      }
-    })
+
   },
 
   /**

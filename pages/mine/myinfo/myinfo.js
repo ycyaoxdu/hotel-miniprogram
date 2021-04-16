@@ -32,12 +32,25 @@ Page({
       } ,
       method: "POST",
       success (res) {
-        console.log(res.data);
+        //console.log(res.data);
+        wx.showModal({
+          title:'常住人信息',
+          content:'常住人信息已经成功更新',
+          confirmText:'确定',
+          showCancel:false,
+          success(res){
+            wx.navigateBack({
+              delta: 0,
+            })
+          }
+        })
       },
       fail(){
         console.log(res.errMsg);
       }
     })
+
+
   },
 
 

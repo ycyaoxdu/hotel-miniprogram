@@ -3,7 +3,7 @@ const URL = 'http://127.0.0.1:3000/api';
 const IndexUrl = URL + '/index';
 const UserInfoUrl = URL + '/userinfo';
 const OrderUrl = URL + '/order';
-
+const AdviceUrl = URL + '/advice';
 
 module.exports = {
   IndexUrl,
@@ -14,7 +14,10 @@ module.exports = {
 
   OrderUrl,
   doAddOrderUrl : OrderUrl + '/doAdd',
-  EditOrderUrl : OrderUrl + '/edit',
+  checkOrderUrl : OrderUrl + '/edit',
   doEditOrderUrl : OrderUrl + '/doEdit',
-  doDeleteOrderUrl : OrderUrl + '/delete'
+  doDeleteOrderUrl : OrderUrl + '/delete',
+  editStatusUrl : OrderUrl + '/editStatus',
+
+  addAdviceUrl : AdviceUrl + '/doAdd'
 };

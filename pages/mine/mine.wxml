@@ -8,17 +8,25 @@
   </view>
 </view>
 
+<view class="pag">
 
+<view class="butt">
+  <button bindtap="goToMyInfo" type="primary">个人信息</button>
+</view>
+<view class="butt">
+  <button bindtap="goToMyOrder" type="primary">我的订单</button>
+</view>
+<view class="butt">
+  <button bindtap="goToAdvice" type="primary">投诉建议</button>
+</view>
 
-<button bindtap="goToMyInfo" type="primary">个人信息</button>
-<text>  </text>
-<button bindtap="goToMyOrder" type="primary">我的订单</button>
+</view>
 
 
 
 
 
 <view class="footer">
-    <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
-    <view class="text">- 享你所想 -</view>
-  </view>
+  <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+  <view class="text">- 享你所想 -</view>
+</view>

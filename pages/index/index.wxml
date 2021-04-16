@@ -1,13 +1,5 @@
 <!--index.wxml-->
 
-<view class="header">
-  <view class="container hdCon">
-    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
-      <image mode="heightFix" src="/images/icons/xdu.png"></image>
-    </navigator>
-
-  </view>
-</view>
 
 <button bindtap="goToHome">go</button>
-<button bindtap="login">press to login</button>
+<button bindtap="login" type="primary">press to login</button>

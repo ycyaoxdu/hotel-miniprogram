@@ -1,0 +1,56 @@
+<!--pages/mine/myorder/editorder/editorder.wxml-->
+
+<view class="header">
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="/pages/home/home" class="logo">
+      <image mode="heightFix" src="/images/icons/xdu.png"></image>
+    </navigator>
+
+  </view>
+</view>
+<!--  -->
+
+<view class="Item">
+  <text>入住人姓名：</text>
+  <view class="textinput">
+    <input value="{{name}}" placeholder="此处输入入住人姓名：" bindinput="addName"></input>
+  </view>
+</view>
+
+<view class="Item">
+  <text>入住人电话：</text>
+  <view class="textinput">
+    <input value="{{phone}}" placeholder="此处输入入住人电话：" bindinput="addPhone"></input>
+  </view>
+</view>
+
+<view class="Item">
+  <text>入住房型：</text>
+  <view class="textinput">
+    <picker mode="selector"  value="{{index}}" range="{{array}}" bindchange="bindType"> {{array[index]}} </picker>
+  </view>
+</view>
+
+<view class="Item">
+  <text>入住日期：</text>
+  <view class="textinput">
+    <picker mode="date" bindchange="bindStart"> {{start}} </picker>
+  </view>
+</view>
+<view class="Item">
+  <text>预计离店：</text>
+  <view class="textinput">
+    <picker mode="date" bindchange="bindEnd"> {{end}} </picker>
+  </view>
+</view>
+
+<view class="Item">
+  <button bindtap="editOrder" type="primary">提交订单</button>
+
+</view>
+
+
+<view class="footer">
+  <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
+  <view class="text">- 享你所想 -</view>
+</view>
