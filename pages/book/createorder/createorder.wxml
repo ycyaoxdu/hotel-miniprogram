@@ -14,7 +14,7 @@
 
 
 <view class="Item">
-  <view class="tips"> you have selected {{type}} room </view>
+  <view class="tips"> you have choosed {{type}} room </view>
 </view>
 
 <view class="Item">

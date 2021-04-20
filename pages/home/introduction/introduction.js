@@ -1,18 +1,22 @@
 // pages/home/introduction/introduction.js
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    introduction:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      introduction : options.introduction
+    })
   },
 
   /**

@@ -1,43 +1,18 @@
-// pages/mine/myorder/myorder.js
-const api = require('../../../config/api');
-const app = getApp();
-
-
-
+// pages/mime/myorder/editorder/payment/payment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData:[]
-    },
-  goToPayment(){
-    wx.navigateTo({
-      url: '../myorder/payment/payment',
-    })
+
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: api.checkOrderUrl,
-      data:{
-        openid : app.globalData.openid
-      },
-      method:"POST",
-      success : (res)=>{
-        console.log(res.data);
-        this.setData({
-          listData:res.data,
-        })
-      },
-      fail(res){
-        console.log(res.errMsg);
-      }
-    })
+
   },
 
   /**

@@ -19,7 +19,7 @@
       </view>
     </view>
     <view class="dyMain" wx:for="{{listData}}">
-      <navigator class="dyItem" url="./editorder/editorder?name={{item.name}}&phone={{item.phone}}&type={{item.type}}&start={{item.start}}&end={{item.end}}&status={{status}}&id={{item._id}}&createTime={{item.createTime}}">
+      <navigator class="dyItem" url="./editorder/editorder?name={{item.name}}&phone={{item.phone}}&type={{item.type}}&start={{item.start}}&end={{item.end}}&status={{item.status}}&_id={{item._id}}&createTime={{item.createTime}}">
 
         <view class="aa">
           <view class="txt">
@@ -81,8 +81,17 @@
           </view>
         </view>
 
-
       </navigator>
+
+      <view wx:if="{{item.status=='not pay'}}">
+        <text>当前订单尚未支付！</text>
+      </view >
+      <view wx:else>
+        <text>已支付</text>
+      </view>
+
+
+    
     </view>
   </view>
 </view>

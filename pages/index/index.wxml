@@ -1,5 +1,7 @@
 <!--index.wxml-->
 
 
-<button bindtap="goToHome">go</button>
-<button bindtap="login" type="primary">press to login</button>
+<view class="but">
+  <button bindtap="login" type="primary">点击登录</button>
+
+</view>

@@ -13,14 +13,14 @@
 <view class="Item">
   <text>入住人姓名：</text>
   <view class="textinput">
-    <input value="{{name}}" placeholder="此处输入入住人姓名：" bindinput="addName"></input>
+    <input value="{{name}}" placeholder="此处输入入住人姓名：" bindinput="bindName"></input>
   </view>
 </view>
 
 <view class="Item">
   <text>入住人电话：</text>
   <view class="textinput">
-    <input value="{{phone}}" placeholder="此处输入入住人电话：" bindinput="addPhone"></input>
+    <input value="{{phone}}" placeholder="此处输入入住人电话：" bindinput="bindPhone"></input>
   </view>
 </view>
 

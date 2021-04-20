@@ -56,6 +56,9 @@
 .dynamic{
   padding: 90rpx 0 70rpx;
 }
+.dyMain{
+  border: 1px solid red;
+}
 .dyItem{
   display: flex;
   padding: 15rpx 0;
@@ -77,6 +80,9 @@
 .dyItem .info{
   font-size: 34rpx;
 }
+
+
+
 
 /**  **/
 .footer{

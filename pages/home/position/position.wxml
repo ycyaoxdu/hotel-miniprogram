@@ -20,7 +20,7 @@
     酒店地址:
   </view>
   <view class="text">
-    陕西省西安市长安区xx路xxx号
+    {{address}}
   </view>
 </view>
 

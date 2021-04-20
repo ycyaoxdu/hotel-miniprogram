@@ -67,7 +67,7 @@ Page({
       success (res) {
         console.log(res)
         wx.navigateTo({
-          url: '../payment/payment',
+          url: '../../mine/myorder/payment/payment',
         })
       },
       fail(){

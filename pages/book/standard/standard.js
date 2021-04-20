@@ -20,7 +20,7 @@ Page({
         }
       },
       success: res=>{
-        res.eventChannel.emit('acceptDataFromOpenedPage', {data:'standard'})
+        res.eventChannel.emit('acceptDataFromOpenedPage', {data:'single'})
       }
     })
   },

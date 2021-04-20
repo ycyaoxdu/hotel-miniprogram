@@ -1,4 +1,6 @@
 // pages/mine/myorder/editorder/editorder.js
+const api = require('../../../../config/api');
+const app = getApp();
 
 let name = ""
 let phone = ""
@@ -6,7 +8,8 @@ let type = ""
 let start = ""
 let end = ""
 let status = ""
-let id = ""
+let openid = ""
+let _id = ""
 let createTime = ""
 
 
@@ -16,7 +19,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array:['standard','double'],
+    array:['single','double'],
     index:0,
     name:name,
     phone:phone,
@@ -24,37 +27,76 @@ Page({
     start:start,
     end:end,
     status:status,
-    id:id,
+    openid:openid,
+    _id:_id,
     createTime:createTime
   },
+  bindName : function(e) {
+    //console.log(e.detail.value);
+    this.setData({
+      name : e.detail.value 
+    })
+  },
+  bindPhone : function(e) {
+    //console.log(e.detail.value);
+    this.setData({
+      phone : e.detail.value 
+    })
+  },
   bindStart : function(e) {
-    console.log(e.detail.value);
+    //console.log(e.detail.value);
     this.setData({
       start : e.detail.value 
     })
   },
   bindEnd : function(e) {
-    console.log(e.detail.value);
+    //console.log(e.detail.value);
     this.setData({
       end : e.detail.value 
     })
   },
   bindType : function(e) {
-    console.log(e.detail.value);
+    //console.log(e.detail.value);
     this.setData({
       index : e.detail.value ,
     })
   },
 
   editOrder(){
-    console.log(array[index])
+    console.log(this.data)
+    //先提交
+    wx.request({
+      url:api.doEditOrderUrl,
+      data:{
+        _id:this.data._id,
+        name:this.data.name,
+        phone:this.data.phone,
+        type:this.data.type,
+        start:this.data.start,
+        end:this.data.end,
+      },
+      method:"POST",
+      success(res){
+        console.log(res)
+      },
+      fail(res){
+        console.log(res.errMsg)
+      }
+    })
+    //判断是否支付，未支付则跳转支付页面
+    if(this.data.status == 'not pay'){
+      app.globalData._id = this.data._id
+      wx.navigateTo({
+        url: './payment/payment',
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
     this.setData({
       name:options.name,
       phone:options.phone,
@@ -62,7 +104,7 @@ Page({
       start:options.start,
       end:options.end,
       status:options.status,
-      id:options.id,
+      _id : options._id,
       createTime:options.createTime
     })
 

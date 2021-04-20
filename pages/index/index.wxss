@@ -1,0 +1,13 @@
+.but{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 
+  border: 1rpx solid red;
+*/
+
+  padding:500rpx 10rpx 500rpx;
+
+
+}

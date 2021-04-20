@@ -39,7 +39,7 @@
       </view>
 
       <view class="introMain">
-        <navigator class="box" url="./introduction/introduction">
+        <navigator class="box" url="./introduction/introduction?introduction={{hotelInfo.introduction}}">
           <image class="pic" src="/images/pics/color1.png"></image>
           <view class="ceng">
             <view class="tit">酒店介绍</view>
@@ -48,7 +48,7 @@
           </view>
         </navigator>
 
-        <navigator class="box" url="./status/status">
+        <navigator class="box" url="./status/status?status={{hotelInfo.status}}&decorateTime={{hotelInfo.decorateTime}}">
           <image class="pic" src="/images/pics/color2.png"></image>
           <view class="ceng">
             <view class="tit">酒店状态</view>
@@ -57,7 +57,7 @@
           </view>
         </navigator>
 
-        <navigator class="box" url="./position/position">
+        <navigator class="box" url="./position/position?address={{hotelInfo.address}}">
           <image class="pic" src="/images/pics/color3.png"></image>
           <view class="ceng">
             <view class="tit">酒店地址</view>
@@ -66,7 +66,7 @@
           </view>
         </navigator>
 
-        <navigator class="box" url="./telephone/telephone">
+        <navigator class="box" url="./telephone/telephone?telephone={{hotelInfo.telephone}}">
           <image class="pic" src="/images/pics/color4.png"></image>
           <view class="ceng">
             <view class="tit">酒店热线</view>
@@ -85,7 +85,7 @@
     <view class="container">
       <view class="pubTitle">
         <view class="txt">
-          最新公告
+          公告
         </view>
         <navigator class="detail"> 更多 >> </navigator>
       </view>
@@ -97,10 +97,10 @@
           </view>
           <view class="txt">
             <view class="title">
-              title 
+              XD酒店开业啦！
             </view>
             <view class="info">
-              information
+              这里是信息这里是信息这里是信息这里是信息这里是信息这里是信息这里是信息
             </view>
 
           </view>
@@ -117,8 +117,5 @@
     <image class="pic" mode="widthFix" src="/images/icons/xdu.png"></image>
     <view class="text">- 享你所想 -</view>
   </view>
-
-
-
 
 </view>

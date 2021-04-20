@@ -14,8 +14,11 @@
 
 
 <view class="dyItem">
+  <view class="title">
+    订房热线：
+  </view>
   <view class="text">
-    订房热线：029-8888 8888
+    {{telephone}}
   </view>
 </view>
 
