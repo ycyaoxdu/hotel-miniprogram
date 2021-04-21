@@ -20,6 +20,7 @@ module.exports = {
   doEditOrderUrl : OrderUrl + '/doEdit',
   doDeleteOrderUrl : OrderUrl + '/delete',
   editStatusUrl : OrderUrl + '/editStatus',
+  cancelOrder : OrderUrl + '/delete',
 
   addAdviceUrl : AdviceUrl + '/doAdd',
 

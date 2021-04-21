@@ -1,5 +1,5 @@
 <!--pages/mine/myorder/myorder.wxml-->
-<text>pages/mine/myorder/myorder.wxml</text>
+
 <view class="header">
   <view class="container hdCon">
     <navigator open-type="switchTab" url="/pages/home/home" class="logo">
@@ -83,13 +83,16 @@
 
       </navigator>
 
+
+<!--
+
       <view wx:if="{{item.status=='not pay'}}">
         <text>当前订单尚未支付！</text>
       </view >
       <view wx:else>
         <text>已支付</text>
       </view>
-
+-->
 
     
     </view>

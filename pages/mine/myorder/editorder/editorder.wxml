@@ -43,10 +43,17 @@
     <picker mode="date" bindchange="bindEnd"> {{end}} </picker>
   </view>
 </view>
+<view class="Item">
+  <text>订单状态：</text>
+  <view class="textinput">
+    {{status}}
+  </view>
+</view>
 
 <view class="Item">
-  <button bindtap="editOrder" type="primary">提交订单</button>
+  <button bindtap="cancelOrder">取消订单</button>
 
+  <button bindtap="editOrder" type="primary">提交订单</button>
 </view>
 
 

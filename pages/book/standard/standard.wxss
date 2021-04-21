@@ -1,17 +1,5 @@
 /* pages/book/book.wxss */
 /**  **/
-.hdCon{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-.hdCon navigator{
-  height: 50rpx;
-}
-.hdCon image{
-  height: 100%;
-}
 
 /** **/
 .pubTitle{
@@ -76,16 +64,3 @@
 
 
 
-/**  **/
-.footer{
-  padding: 30rpx 0;
-  background: #f2f2f2 ;
-  text-align: center;
-}
-.footer .pic{
-  width: 90rpx;
-}
-.footer .txt{
-  font-size: 25rpx;
-  color: #999;
-}

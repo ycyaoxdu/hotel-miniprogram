@@ -20,85 +20,86 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array:['single','double'],
-    index:0,
-    name:name,
-    phone:phone,
-    type:type,
-    start:start,
-    end:end,
-    time: time ,
-    status:status,
-    openid:openid,
-    _id:_id,
-    createTime:createTime
+    array: ['single', 'double'],
+    index: 0,
+    name: name,
+    phone: phone,
+    type: type,
+    start: start,
+    end: end,
+    time: time,
+    status: status,
+    openid: openid,
+    _id: _id,
+    createTime: createTime
   },
-  bindName : function(e) {
+
+  bindName: function (e) {
     //console.log(e.detail.value);
     this.setData({
-      name : e.detail.value 
+      name: e.detail.value
     })
   },
-  bindPhone : function(e) {
+  bindPhone: function (e) {
     //console.log(e.detail.value);
     this.setData({
-      phone : e.detail.value 
+      phone: e.detail.value
     })
   },
 
-  bindStart : function(e) {
+  bindStart: function (e) {
     console.log(e.detail.value);
     //end默认为start+1
-    let day = new Date( (new Date(e.detail.value).getTime() + (1000 *60*60*24) )  ) ;
+    let day = new Date((new Date(e.detail.value).getTime() + (1000 * 60 * 60 * 24)));
 
     this.setData({
-      start : e.detail.value ,
-      end : formatTime(day)
+      start: e.detail.value,
+      end: formatTime(day)
     })
     //console.log(formatTime(day));
   },
 
 
-  bindEnd : function(e) {
+  bindEnd: function (e) {
     //console.log(e.detail.value);
     this.setData({
-      end : e.detail.value 
+      end: e.detail.value
     })
   },
-  bindType : function(e) {
+  bindType: function (e) {
     //console.log(e.detail.value);
     this.setData({
-      index : e.detail.value ,
+      index: e.detail.value,
     })
   },
 
-  editOrder(){
+  editOrder() {
     console.log(this.data)
-        //计算住房时间
-        let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60*24);
+    //计算住房时间
+    let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60 * 24);
 
     //先提交
     wx.request({
-      url:api.doEditOrderUrl,
-      data:{
-        _id:this.data._id,
-        name:this.data.name,
-        phone:this.data.phone,
-        type:this.data.type,
-        start:this.data.start,
-        end:this.data.end,
-        time:day
+      url: api.doEditOrderUrl,
+      data: {
+        _id: this.data._id,
+        name: this.data.name,
+        phone: this.data.phone,
+        type: this.data.type,
+        start: this.data.start,
+        end: this.data.end,
+        time: day
       },
-      method:"POST",
-      success(res){
+      method: "POST",
+      success(res) {
         console.log(res)
       },
-      fail(res){
+      fail(res) {
         console.log(res.errMsg)
       }
     })
     //判断是否支付，未支付则跳转支付页面
-    if(this.data.status == 'not pay'){
+    if (this.data.status == 'not pay') {
       app.globalData._id = this.data._id
       wx.navigateTo({
         url: './payment/payment',
@@ -106,20 +107,61 @@ Page({
     }
   },
 
+  cancelOrder() {
+    //console.log(this.data.status)
+    if (this.data.status == 'not pay') {
+      //console.log('cancel order')
+      wx.request({
+        url: api.cancelOrder,
+        data: {
+          _id: this.data._id
+        },
+        method: "POST",
+        success(res) {
+          console.log(res.data);
+          wx.navigateBack({
+            delta: 0,
+            success: () => {
+              wx.startPullDownRefresh()
+            }
+          })
+        },
+        fail(res) {
+          console.log(res.errMsg);
+        }
+      })
+    } else {
+      console.log('请联系管理员处理')
+      wx.showToast({
+        title: '请联系管理员',
+        icon: 'loading',
+        complete() {
+          wx.navigateBack({
+            delta: 0,
+            success: () => {
+              wx.startPullDownRefresh()
+            }
+          })
+        }
+      })
+    }
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      name:options.name,
-      phone:options.phone,
-      type:options.type,
-      start:options.start,
-      end:options.end,
-      status:options.status,
-      _id : options._id,
-      createTime:options.createTime
+      name: options.name,
+      phone: options.phone,
+      type: options.type,
+      start: options.start,
+      end: options.end,
+      status: options.status,
+      _id: options._id,
+      createTime: options.createTime
     })
 
   },
