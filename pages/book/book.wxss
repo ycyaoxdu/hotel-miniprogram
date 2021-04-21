@@ -65,7 +65,10 @@
 }
 .dyItem .title{
   font-size: 34rpx;
+  display: flex;
+  justify-content: space-between;
 }
+
 .dyItem .info{
   font-size: 26rpx;
   color: #888; 

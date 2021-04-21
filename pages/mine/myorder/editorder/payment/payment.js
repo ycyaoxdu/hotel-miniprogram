@@ -2,7 +2,8 @@
 const api = require('../../../../../config/api');
 const app = getApp();
 
-let money = ""
+
+let money = 0
 
 Page({
 
@@ -12,10 +13,10 @@ Page({
   data: {
     money: money
   },
-  afterPay() {
+  doPay() {
     //弹窗提示已支付，在***查看订单详情
     wx.showModal({
-      title: '微信支付',
+      title: '￥' + this.data.money,
       content: '这里模拟了微信支付操作（没有商家id无法微信收款）',
       confirmText: '点击支付',
       success(res) {
@@ -32,11 +33,11 @@ Page({
               console.log(res);
             },
             fail(res) {
-              console.log(errMsg);
+              console.log(res.errMsg);
             }
           })
         } else {
-
+          console.log('支付失败')
         }
         wx.navigateTo({
           url: '/pages/mine/myorder/myorder',
@@ -50,6 +51,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //调价格接口
+    wx.request({
+      url: api.PayUrl,
+      data: {
+        _id: app.globalData._id
+      },
+      method: "POST",
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          money: res.data
+        })
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
 
   },
 

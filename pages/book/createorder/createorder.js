@@ -3,13 +3,6 @@ const api = require('../../../config/api');
 const app = getApp();
 const {formatTime} = require('../../../utils/util');
 
-let openid = ""
-let name = ""
-let phone = ""
-let type = ""
-let start = ""
-let end = ""
-
 
 Page({
 
@@ -17,12 +10,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid:openid ,
-    name:name,
-    phone:phone,
-    type:type,
-    start:start,
-    end:end,
+    openid:"" ,
+    name:"",
+    phone:"",
+    type:"",
+    start:"",
+    end:"",
+    time:""
   },
 
   addName(event){
@@ -38,9 +32,14 @@ Page({
 
   bindStart : function(e) {
     console.log(e.detail.value);
+    //end默认为start+1
+    let day = new Date( (new Date(e.detail.value).getTime() + (1000 *60*60*24) )  ) ;
+
     this.setData({
-      start : e.detail.value 
+      start : e.detail.value ,
+      end : formatTime(day)
     })
+    //console.log(formatTime(day));
   },
   bindEnd : function(e) {
     console.log(e.detail.value);
@@ -51,6 +50,11 @@ Page({
 
   addOrder(){
     console.log(this.data);
+    //计算住房时间
+    let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60*24);
+
+    //console.log(day);
+
     wx.request({
       url: api.doAddOrderUrl,
       data:{
@@ -60,6 +64,7 @@ Page({
         type:this.data.type,
         start:this.data.start,
         end:this.data.end,
+        time:day,
         createTime:Date.now(),
         status:"not pay",
       },
@@ -67,7 +72,7 @@ Page({
       success (res) {
         console.log(res)
         wx.navigateTo({
-          url: '../../mine/myorder/payment/payment',
+          url: '../../mine/myorder/editorder/payment/payment',
         })
       },
       fail(){

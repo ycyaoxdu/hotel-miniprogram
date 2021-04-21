@@ -5,6 +5,7 @@ const UserInfoUrl = URL + '/userinfo';
 const OrderUrl = URL + '/order';
 const AdviceUrl = URL + '/advice';
 const InformationUrl = URL + '/hotel';
+const PayUrl = URL + '/pay';
 
 module.exports = {
   IndexUrl,
@@ -22,5 +23,7 @@ module.exports = {
 
   addAdviceUrl : AdviceUrl + '/doAdd',
 
-  InformationUrl
+  InformationUrl,
+
+  PayUrl
 };

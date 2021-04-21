@@ -7,6 +7,7 @@ let phone = ""
 let type = ""
 let start = ""
 let end = ""
+let time = 0
 let status = ""
 let openid = ""
 let _id = ""
@@ -26,6 +27,7 @@ Page({
     type:type,
     start:start,
     end:end,
+    time: time ,
     status:status,
     openid:openid,
     _id:_id,
@@ -43,12 +45,20 @@ Page({
       phone : e.detail.value 
     })
   },
+
   bindStart : function(e) {
-    //console.log(e.detail.value);
+    console.log(e.detail.value);
+    //end默认为start+1
+    let day = new Date( (new Date(e.detail.value).getTime() + (1000 *60*60*24) )  ) ;
+
     this.setData({
-      start : e.detail.value 
+      start : e.detail.value ,
+      end : formatTime(day)
     })
+    //console.log(formatTime(day));
   },
+
+
   bindEnd : function(e) {
     //console.log(e.detail.value);
     this.setData({
@@ -64,6 +74,9 @@ Page({
 
   editOrder(){
     console.log(this.data)
+        //计算住房时间
+        let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60*24);
+
     //先提交
     wx.request({
       url:api.doEditOrderUrl,
@@ -74,6 +87,7 @@ Page({
         type:this.data.type,
         start:this.data.start,
         end:this.data.end,
+        time:day
       },
       method:"POST",
       success(res){
