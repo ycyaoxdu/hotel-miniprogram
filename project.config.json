@@ -42,12 +42,14 @@
   "compileType": "miniprogram",
   "libVersion": "2.16.1",
   "appid": "wx3590eb11fdf22ed3",
-  "projectname": "yaohoteldasdsad",
+  "projectname": "yaohotel",
   "debugOptions": {
     "hidedInDevtools": []
   },
   "scripts": {},
   "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []

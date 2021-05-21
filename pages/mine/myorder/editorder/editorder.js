@@ -74,37 +74,83 @@ Page({
   },
 
   editOrder() {
-    console.log(this.data)
-    //计算住房时间
-    let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60 * 24);
-
-    //先提交
-    wx.request({
-      url: api.doEditOrderUrl,
-      data: {
-        _id: this.data._id,
-        name: this.data.name,
-        phone: this.data.phone,
-        type: this.data.type,
-        start: this.data.start,
-        end: this.data.end,
-        time: day
-      },
-      method: "POST",
-      success(res) {
-        console.log(res)
-      },
-      fail(res) {
-        console.log(res.errMsg)
-      }
-    })
-    //判断是否支付，未支付则跳转支付页面
     if (this.data.status == 'not pay') {
+      console.log(this.data)
+      //计算住房时间
+      let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60 * 24);
+      //先提交
+      wx.request({
+        url: api.doEditOrderUrl,
+        data: {
+          _id: this.data._id,
+          name: this.data.name,
+          phone: this.data.phone,
+          type: this.data.type,
+          start: this.data.start,
+          end: this.data.end,
+          time: day
+        },
+        method: "POST",
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log(res.errMsg)
+        }
+      })
+      //跳转支付
       app.globalData._id = this.data._id
       wx.navigateTo({
         url: './payment/payment',
       })
+
+    } else if (this.data.status == 'paid') {
+      wx.showModal({
+        title: "提示",
+        content: '到店后补齐差价',
+        success(res) {
+          //点击确定
+          if (res.confirm) {
+            console.log(this.data)
+            //计算住房时间
+            let day = (new Date(this.data.end).getTime() - new Date(this.data.start).getTime()) / (1000 * 60 * 60 * 24);
+            //先提交
+            wx.request({
+              url: api.doEditOrderUrl,
+              data: {
+                _id: this.data._id,
+                name: this.data.name,
+                phone: this.data.phone,
+                type: this.data.type,
+                start: this.data.start,
+                end: this.data.end,
+                time: day
+              },
+              method: "POST",
+              success(res) {
+                console.log(res)
+              },
+              fail(res) {
+                console.log(res.errMsg)
+              }
+            })
+          } else {
+            wx.showToast({
+              title: '您已放弃当前修改',
+              icon: 'none'
+            })
+          }
+        }
+
+      })
+    } else {
+      wx.showToast({
+        title: '请联系客服',
+        icon: 'error',
+        duration: 2000
+      })
     }
+
   },
 
   cancelOrder() {
@@ -133,9 +179,10 @@ Page({
     } else {
       console.log('请联系管理员处理')
       wx.showToast({
-        title: '请联系管理员',
-        icon: 'loading',
-        complete() {
+        title: '联系客服进行退款处理',
+        icon: 'none',
+        duration : 3000,
+        success() {
           wx.navigateBack({
             delta: 0,
             success: () => {
