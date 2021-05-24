@@ -69,8 +69,9 @@ Page({
         status:"not pay",
       },
       method:"POST",
-      success (res) {
+      success: (res)=> {
         console.log(res)
+        app.globalData._id = res.data 
         wx.navigateTo({
           url: '../../mine/myorder/editorder/payment/payment',
         })

@@ -107,7 +107,7 @@ Page({
     } else if (this.data.status == 'paid') {
       wx.showModal({
         title: "提示",
-        content: '到店后补齐差价',
+        content: '到店后清算差价',
         success(res) {
           //点击确定
           if (res.confirm) {
@@ -145,8 +145,8 @@ Page({
       })
     } else {
       wx.showToast({
-        title: '请联系客服',
-        icon: 'error',
+        title: '请联系管理员修改状态后重试',
+        icon: 'none',
         duration: 2000
       })
     }
@@ -178,16 +178,12 @@ Page({
       })
     } else {
       console.log('请联系管理员处理')
-      wx.showToast({
-        title: '联系客服进行退款处理',
-        icon: 'none',
-        duration : 3000,
-        success() {
+      wx.showModal({
+        title:'tip',
+        content: '请联系管理员更改订单状态后重试！',
+        success (res) {
           wx.navigateBack({
             delta: 0,
-            success: () => {
-              wx.startPullDownRefresh()
-            }
           })
         }
       })
