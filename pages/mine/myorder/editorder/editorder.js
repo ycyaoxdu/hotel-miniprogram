@@ -165,12 +165,17 @@ Page({
         method: "POST",
         success(res) {
           console.log(res.data);
-          wx.navigateBack({
-            delta: 0,
-            success: () => {
-              wx.startPullDownRefresh()
+          wx.showToast({
+            title: '取消成功',
+            icon:'none',
+            duration:3000,
+            success (res) {
+              wx.navigateBack({
+                delta: 0,
+              })
             }
           })
+    
         },
         fail(res) {
           console.log(res.errMsg);
